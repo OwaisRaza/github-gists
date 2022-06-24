@@ -32,7 +32,8 @@ function App() {
     setIsGist(false);
   };
 
-  const onsubmit = async () => {
+  const onsubmit = async (e) => {
+    e.preventDefault();
     onReset();
     setIsLoading(true);
     try {
@@ -93,7 +94,7 @@ function App() {
               className="me-auto my-2 my-lg-0"
               style={{ maxHeight: '100px' }}
             ></Nav>
-            <Form className="d-flex" onSubmit={onsubmit}>
+            <Form className="d-flex" onSubmit={(e) => onsubmit(e)}>
               <FormControl
                 type="search"
                 placeholder="Search"
