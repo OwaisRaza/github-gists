@@ -118,6 +118,11 @@ function App() {
       <Container className="mt-5">
         <Row className="justify-content-md-center">
           <Col md="10">
+            <Alert variant="info">
+              This is a basic application for Github gist, User can get any
+              Github user's public gist, last 3 forks, files and other gist
+              info.
+            </Alert>
             {isLoading && (
               <>
                 <Spinner animation="grow" variant="success" size="sm" />
