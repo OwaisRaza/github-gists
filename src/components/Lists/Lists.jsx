@@ -57,6 +57,7 @@ export default function Lists({
               </ListGroup>
             ))
           ) : (
+            // handle if fork is an empty array
             <p className="text-danger">No fork in this gist</p>
           )
         ) : null}

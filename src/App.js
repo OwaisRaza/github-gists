@@ -39,13 +39,13 @@ function App() {
       const res = await axios.get(
         `https://api.github.com/users/${userName}/gists`
       );
-      setGists(res.data);
       setIsLoading(false);
+      setGists(res.data);
       if (!res.data.length) setIsGist(true);
     } catch (error) {
       setGistsError(error.response.data.message);
-      setIsGist(false);
       setIsLoading(false);
+      setIsGist(false);
     }
   };
 
@@ -82,6 +82,7 @@ function App() {
   };
 
   return (
+    // Header view
     <div className="App">
       <Navbar sticky="top" bg="dark" variant="dark" expand="lg">
         <Container>
@@ -98,7 +99,6 @@ function App() {
                 placeholder="Search"
                 className="me-2"
                 aria-label="Search"
-                defaultValue="defunkt"
                 onChange={(e) => setUserName(e.target.value)}
               />
               <Button
@@ -113,15 +113,16 @@ function App() {
         </Container>
       </Navbar>
 
+      {/* List view */}
       <Container className="mt-5">
-        {isLoading && (
-          <>
-            <Spinner animation="grow" variant="success" size="sm" />
-            <Spinner animation="grow" variant="success" />
-          </>
-        )}
         <Row className="justify-content-md-center">
           <Col md="10">
+            {isLoading && (
+              <>
+                <Spinner animation="grow" variant="success" size="sm" />
+                <Spinner animation="grow" variant="success" />
+              </>
+            )}
             {gistsError && <Alert variant="danger">{gistsError}</Alert>}
             {isGist && (
               <Alert variant="danger">
