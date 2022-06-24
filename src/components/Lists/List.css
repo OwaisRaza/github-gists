@@ -1,0 +1,21 @@
+.main-list {
+  text-align: left;
+  margin-bottom: 15px;
+  border-bottom: 0;
+  text-transform: capitalize;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.fork-list {
+  width: 200px;
+}
+.fork-list,
+.list-group-item {
+  text-align: justify;
+}
+.fork-list,
+.list-group-item small {
+  font-weight: 600;
+  font-size: 12px;
+}
